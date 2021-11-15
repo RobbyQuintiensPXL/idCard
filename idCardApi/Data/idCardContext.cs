@@ -30,6 +30,9 @@ namespace idCardApp.API.Data
             modelBuilder.Entity<Student>().HasIndex(student => student.Email).IsUnique();
             modelBuilder.Entity<Student>().HasKey(student => student.Email);
 
+            modelBuilder.Entity<Lector>().HasIndex(Lector => Lector.Email).IsUnique();
+            modelBuilder.Entity<Lector>().HasKey(Lector => Lector.Email);
+
             modelBuilder.Entity<StudentCourse>().HasKey(sc => new { sc.StudentEmail, sc.CourseId });
             modelBuilder.Entity<StudentCourse>().HasOne(s => s.Student).WithMany(c => c.Courses).HasForeignKey(p => p.StudentEmail);
             modelBuilder.Entity<StudentCourse>().HasOne(c => c.Course).WithMany(s => s.Students).HasForeignKey(p => p.CourseId);

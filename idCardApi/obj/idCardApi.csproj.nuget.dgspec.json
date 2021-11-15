@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\robby\\source\\repos\\idCardApi\\idCardApi\\idCardApi.csproj": {}
+    "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardApi\\idCardApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\robby\\source\\repos\\idCardApi\\idCardApi\\idCardApi.csproj": {
+    "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardApi\\idCardApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\robby\\source\\repos\\idCardApi\\idCardApi\\idCardApi.csproj",
+        "projectUniqueName": "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardApi\\idCardApi.csproj",
         "projectName": "idCardApi",
-        "projectPath": "C:\\Users\\robby\\source\\repos\\idCardApi\\idCardApi\\idCardApi.csproj",
+        "projectPath": "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardApi\\idCardApi.csproj",
         "packagesPath": "C:\\Users\\robby\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\robby\\source\\repos\\idCardApi\\idCardApi\\obj\\",
+        "outputPath": "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

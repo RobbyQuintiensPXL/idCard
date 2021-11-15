@@ -1,5 +1,7 @@
-﻿using idCardApp.API.Data;
+﻿using idCardApi.Repositories;
+using idCardApp.API.Data;
 using idCardApp.API.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +9,20 @@ using System.Threading.Tasks;
 
 namespace idCardApp.API.Repositories
 {
-    public class LectorRepository : ILectorRepository
+    public class LectorRepository : BaseRepository, ILectorRepository
     {
-        private idCardContext _context;
+        public LectorRepository(idCardContext context) : base(context)
+        {
 
-        public LectorRepository(idCardContext context)
-        {
-            _context = context;
         }
-        public Lector GetLector(string name)
+        public Lector GetLector(int id)
         {
-            return _context.Lectors.Find(name);
+            return _context.Lectors.FirstOrDefault(l => l.Id == id);
+        }
+
+        public async Task<IEnumerable<Lector>> ListAsync()
+        {
+            return await _context.Lectors.ToListAsync();
         }
     }
 }

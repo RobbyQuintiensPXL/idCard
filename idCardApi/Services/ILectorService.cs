@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace idCardApp.API.Repositories
+namespace idCardApi.Services
 {
-    public interface ILectorRepository
+    public interface ILectorService
     {
         Task<IEnumerable<Lector>> ListAsync();
 

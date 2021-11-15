@@ -24,7 +24,7 @@ namespace idCardApp.API.Models
         public string Email { get => _email; set => _email = value; }
 
         [JsonIgnore]
-        public Course Course { get => course; set => course = value; }
+        public virtual Course Course { get => course; set => course = value; }
         public int CourseId { get => _courseId; set => _courseId = value; }
     }
 }
