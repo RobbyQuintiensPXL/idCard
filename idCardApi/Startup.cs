@@ -75,5 +75,14 @@ namespace idCardApi
             app.UseMvc();
 
         }
+
+
+        //api rest calls 
+        // /api/courses
+        /// api/courses
+        /// api/courses/1
+        /// api/pedates
+        /// api/pedates/1
+        /// api/studentpe/1 (PUT)
     }
 }
