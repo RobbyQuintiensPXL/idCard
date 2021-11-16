@@ -11,5 +11,8 @@ namespace idCardApi.Services
         Task<IEnumerable<Course>> ListAsync();
 
         Course GetCourse(int id);
+
+        Task<IEnumerable<Course>> ListPEDatesAsync(int id);
+
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace idCardApi.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,35 +21,19 @@ namespace idCardApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "Lectors",
                 columns: table => new
                 {
                     Email = table.Column<string>(nullable: false),
                     Id = table.Column<int>(nullable: false),
                     Firstname = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    Role = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Students", x => x.Email);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Lectors",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Firstname = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
                     Role = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(nullable: true),
                     CourseId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Lectors", x => x.Id);
+                    table.PrimaryKey("PK_Lectors", x => x.Email);
                     table.ForeignKey(
                         name: "FK_Lectors_Courses_CourseId",
                         column: x => x.CourseId,
@@ -77,6 +61,35 @@ namespace idCardApi.Migrations
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    Email = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false),
+                    Firstname = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Role = table.Column<int>(nullable: false),
+                    PEDateId = table.Column<int>(nullable: true),
+                    PEDateId1 = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.Email);
+                    table.ForeignKey(
+                        name: "FK_Students_PEDates_PEDateId",
+                        column: x => x.PEDateId,
+                        principalTable: "PEDates",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Students_PEDates_PEDateId1",
+                        column: x => x.PEDateId1,
+                        principalTable: "PEDates",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -114,33 +127,61 @@ namespace idCardApi.Migrations
 
             migrationBuilder.InsertData(
                 table: "Students",
-                columns: new[] { "Email", "Firstname", "Id", "Name", "Role" },
+                columns: new[] { "Email", "Firstname", "Id", "Name", "PEDateId", "PEDateId1", "Role" },
                 values: new object[,]
                 {
-                    { "jaak.metdebroek@student.pxl.be", "Jaak", 1, "Metdebroek", 0 },
-                    { "jos.indebroek@student.pxl.be", "Jos", 2, "Indebroek", 0 },
-                    { "jef.vandebroek@student.pxl.be", "Jef", 3, "Vandebroek", 0 }
+                    { "jaak.metdebroek@student.pxl.be", "Jaak", 1, "Metdebroek", null, null, 0 },
+                    { "jos.indebroek@student.pxl.be", "Jos", 2, "Indebroek", null, null, 0 },
+                    { "jef.vandebroek@student.pxl.be", "Jef", 3, "Vandebroek", null, null, 0 },
+                    { "jakie.Uitdebroek@student.pxl.be", "Jakie", 4, "Uitdebroek", null, null, 0 },
+                    { "john.zonderbroek@student.pxl.be", "John", 5, "Zonderbroek", null, null, 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Lectors",
-                columns: new[] { "Id", "CourseId", "Email", "Firstname", "Name", "Role" },
-                values: new object[] { 1, 1, "kris.hermans@pxl.be", "Kris", "Hermans", 1 });
+                columns: new[] { "Email", "CourseId", "Firstname", "Id", "Name", "Role" },
+                values: new object[,]
+                {
+                    { "kris.hermans@pxl.be", 1, "Kris", 1, "Hermans", 1 },
+                    { "tom.schuyten@pxl.be", 2, "Tom", 2, "Schuyten", 1 }
+                });
 
             migrationBuilder.InsertData(
-                table: "Lectors",
-                columns: new[] { "Id", "CourseId", "Email", "Firstname", "Name", "Role" },
-                values: new object[] { 2, 2, "tom.schuyten@pxl.be", "Tom", "Schuyten", 1 });
+                table: "PEDates",
+                columns: new[] { "Id", "CourseId", "Date", "Type" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2021, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
+                    { 2, 1, new DateTime(2021, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 }
+                });
 
             migrationBuilder.InsertData(
                 table: "StudentCourses",
                 columns: new[] { "StudentEmail", "CourseId" },
-                values: new object[] { "jaak.metdebroek@student.pxl.be", 1 });
+                values: new object[,]
+                {
+                    { "jaak.metdebroek@student.pxl.be", 1 },
+                    { "jaak.metdebroek@student.pxl.be", 2 },
+                    { "jos.indebroek@student.pxl.be", 1 },
+                    { "jos.indebroek@student.pxl.be", 2 },
+                    { "jef.vandebroek@student.pxl.be", 1 },
+                    { "jef.vandebroek@student.pxl.be", 2 },
+                    { "jakie.Uitdebroek@student.pxl.be", 1 },
+                    { "jakie.Uitdebroek@student.pxl.be", 2 },
+                    { "john.zonderbroek@student.pxl.be", 1 },
+                    { "john.zonderbroek@student.pxl.be", 2 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lectors_CourseId",
                 table: "Lectors",
                 column: "CourseId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Lectors_Email",
+                table: "Lectors",
+                column: "Email",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -158,6 +199,16 @@ namespace idCardApi.Migrations
                 table: "Students",
                 column: "Email",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_PEDateId",
+                table: "Students",
+                column: "PEDateId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_PEDateId1",
+                table: "Students",
+                column: "PEDateId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -166,16 +217,16 @@ namespace idCardApi.Migrations
                 name: "Lectors");
 
             migrationBuilder.DropTable(
-                name: "PEDates");
-
-            migrationBuilder.DropTable(
                 name: "StudentCourses");
 
             migrationBuilder.DropTable(
-                name: "Courses");
+                name: "Students");
 
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "PEDates");
+
+            migrationBuilder.DropTable(
+                name: "Courses");
         }
     }
 }

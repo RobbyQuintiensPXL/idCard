@@ -26,5 +26,20 @@ namespace idCardApi.Controllers
             var peDates = await _pEDateService.ListAsync();
             return peDates;
         }
+
+        //[HttpGet("{courseId}")]
+        //public async Task<IEnumerable<PEDate>> GetByIdAsync(int courseId)
+        //{
+        //    var peDates = await _pEDateService.ListByCourseIdAsync(courseId);
+        //    return peDates;
+        //}
+
+        [HttpGet("{id}")]
+        public Task<PEDate> GetPEDate(int id)
+        {
+            return _pEDateService.GetPEDate(id);
+        }
+
+
     }
 }

@@ -15,6 +15,7 @@ namespace idCardApp.API.Models
         private string _email;
         private Role _role;
         private ICollection<StudentCourse> _courses;
+        private ICollection<StudentPE> _peDates;
 
 
         public int Id { get => _id; set => _id = value; }
@@ -25,5 +26,6 @@ namespace idCardApp.API.Models
 
         [JsonIgnore]
         public virtual ICollection<StudentCourse> Courses { get => _courses; set => _courses = value; }
+        public ICollection<StudentPE> PeDates { get => _peDates; set => _peDates = value; }
     }
 }

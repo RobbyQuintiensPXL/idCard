@@ -23,6 +23,11 @@ namespace idCardApi.Services
             return _studentRepository.GetStudent(id);
         }
 
+        public Student GetStudentByMail(string email)
+        {
+            return _studentRepository.GetStudentByMail(email);
+        }
+
         public async Task<IEnumerable<Student>> ListAsync()
         {
             return await _studentRepository.ListAsync();

@@ -14,6 +14,9 @@ namespace idCardApp.API.Models
         private Course _course;
         private int _courseId;
         private PEType _type;
+        //private Boolean _isLector;
+        private ICollection<StudentPE> _allStudents;
+        
 
         public int Id { get => _id; set => _id = value; }
         public DateTime Date { get => _date; set => _date = value; }
@@ -23,5 +26,7 @@ namespace idCardApp.API.Models
 
         public PEType Type { get => _type; set => _type = value; }
         public int CourseId { get => _courseId; set => _courseId = value; }
+        //public bool IsLector { get => _isLector; set => _isLector = value; }
+        public ICollection<StudentPE> AllStudents { get => _allStudents; set => _allStudents = value; }
     }
 }

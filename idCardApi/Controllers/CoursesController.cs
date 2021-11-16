@@ -31,5 +31,17 @@ namespace idCardApi.Controllers
         {
             return _courseService.GetCourse(id);
         }
+
+        [HttpGet("{id}/pe")]
+        public async Task<IEnumerable<Course>> GetPEDatesAsync(int id)
+        {
+            return await _courseService.ListPEDatesAsync(id);
+        }
+
+        //[HttpGet("{courseId}/pe/{peId}")]
+        //public PEDate GetPEDateByCourseIdAndId(int courseId, int peId)
+        //{
+        //    return _courseService.GetPEDateByCourseIdAndId(courseId, peId);
+        //}
     }
 }

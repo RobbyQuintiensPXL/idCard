@@ -20,6 +20,11 @@ namespace idCardApi.Repositories
             return _context.Students.FirstOrDefault(s => s.Id == id);
         }
 
+        public Student GetStudentByMail(string email)
+        {
+            return _context.Students.FirstOrDefault(s => s.Email == email);
+        }
+
         public async Task<IEnumerable<Student>> ListAsync()
         {
             return await _context.Students.ToListAsync();

@@ -20,10 +20,8 @@ namespace idCardApp.API.Models
         public string Name { get => _name; set => _name = value; }
         public Lector Lector { get => _lector; set => _lector = value; }
 
-        [JsonIgnore]
         public virtual ICollection<StudentCourse> Students { get => _students; set => _students = value; }
 
-        [JsonIgnore]
         public virtual ICollection<PEDate> PeDates { get => _peDates; set => _peDates = value; }
     }
 }

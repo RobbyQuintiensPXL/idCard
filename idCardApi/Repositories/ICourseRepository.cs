@@ -11,5 +11,8 @@ namespace idCardApp.API.Repositories
         Task<IEnumerable<Course>> ListAsync();
 
         Course GetCourse(int id);
+
+        Task<IEnumerable<Course>> ListPEDates(int id);
+
     }
 }

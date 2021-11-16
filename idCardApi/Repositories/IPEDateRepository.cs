@@ -9,5 +9,10 @@ namespace idCardApi.Repositories
     public interface IPEDateRepository
     {
         Task<IEnumerable<PEDate>> ListAsync();
+
+        Task<PEDate> GetPEDate(int id);
+
+        Task<IEnumerable<PEDate>> GetByCourseId(int courseId);
+
     }
 }

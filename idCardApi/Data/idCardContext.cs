@@ -41,6 +41,11 @@ namespace idCardApp.API.Data
 
             modelBuilder.Entity<PEDate>().HasOne(c => c.Course).WithMany(p => p.PeDates).HasForeignKey(c => c.CourseId);
 
+            modelBuilder.Entity<StudentPE>().HasKey(sp => new { sp.StudentEmail, sp.PeId });
+            modelBuilder.Entity<StudentPE>().HasOne(s => s.Student).WithMany(s => s.PeDates).HasForeignKey(p => p.StudentEmail);
+            modelBuilder.Entity<StudentPE>().HasOne(s => s.PeDate).WithMany(s => s.AllStudents).HasForeignKey(p => p.PeId);
+
+
 
             //Seed Data
 
@@ -67,10 +72,13 @@ namespace idCardApp.API.Data
 
             var peDates = new[]
             {
-                new PEDate{Id = 1, CourseId = 1, Type = PEType.PE, Date = new DateTime(2021, 11, 14)}
+                new PEDate{Id = 1, CourseId = 1, Type = PEType.PE, Date = new DateTime(2021, 11, 14)},
+                new PEDate{Id = 2, CourseId = 1, Type = PEType.Exam, Date = new DateTime(2021, 11, 17)},
+                new PEDate{Id = 3, CourseId = 2, Type = PEType.Exam, Date = new DateTime(2021, 11, 19)},
+                new PEDate{Id = 4, CourseId = 1, Type = PEType.PE, Date = new DateTime(2021, 11, 21)},
             };
 
-            modelBuilder.Entity<Student>().HasData(students[0], students[1], students[2]);
+            modelBuilder.Entity<Student>().HasData(students[0], students[1], students[2], students[3], students[4]);
             modelBuilder.Entity<Course>().HasData(courses[0], courses[1]);
             modelBuilder.Entity<Lector>().HasData(lectors[0], lectors[1]);
             modelBuilder.Entity<StudentCourse>().HasData(
@@ -78,9 +86,168 @@ namespace idCardApp.API.Data
                 {
                     StudentEmail = students[0].Email,
                     CourseId = courses[0].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[0].Email,
+                    CourseId = courses[1].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[1].Email,
+                    CourseId = courses[0].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[1].Email,
+                    CourseId = courses[1].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[2].Email,
+                    CourseId = courses[0].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[2].Email,
+                    CourseId = courses[1].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[3].Email,
+                    CourseId = courses[0].Id
+                },
+                new StudentCourse
+                {
+                    StudentEmail = students[3].Email,
+                    CourseId = courses[1].Id
+                }, new StudentCourse
+                {
+                    StudentEmail = students[4].Email,
+                    CourseId = courses[0].Id
+                }, new StudentCourse
+                {
+                    StudentEmail = students[4].Email,
+                    CourseId = courses[1].Id
                 }
                 );
-            modelBuilder.Entity<PEDate>().HasData(peDates[0]);
+            modelBuilder.Entity<PEDate>().HasData(peDates[0], peDates[1], peDates[2], peDates[3]);
+
+            modelBuilder.Entity<StudentPE>().HasData(
+                new StudentPE
+                {
+                    StudentEmail = students[0].Email,
+                    PeId = 1,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[1].Email,
+                    PeId = 1,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[2].Email,
+                    PeId = 1,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[3].Email,
+                    PeId = 1,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[4].Email,
+                    PeId = 1,
+                    Attented = false
+                }, 
+                new StudentPE
+                {
+                    StudentEmail = students[0].Email,
+                    PeId = 2,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[1].Email,
+                    PeId = 2,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[2].Email,
+                    PeId = 2,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[3].Email,
+                    PeId = 2,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[4].Email,
+                    PeId = 2,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[0].Email,
+                    PeId = 3,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[1].Email,
+                    PeId = 3,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[2].Email,
+                    PeId = 3,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[3].Email,
+                    PeId = 3,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[4].Email,
+                    PeId = 3,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[0].Email,
+                    PeId = 4,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[1].Email,
+                    PeId = 4,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[2].Email,
+                    PeId = 4,
+                    Attented = false
+                }, new StudentPE
+                {
+                    StudentEmail = students[3].Email,
+                    PeId = 4,
+                    Attented = false
+                },
+                new StudentPE
+                {
+                    StudentEmail = students[4].Email,
+                    PeId = 4,
+                    Attented = false
+                }
+                );
 
             //Console.WriteLine(studentRole.Description);
 

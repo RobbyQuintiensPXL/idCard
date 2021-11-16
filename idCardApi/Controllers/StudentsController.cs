@@ -27,10 +27,10 @@ namespace idCardApi.Controllers
             return students;
         }
 
-        [HttpGet("{id}")]
-        public Student GetStudent(int id)
+        [HttpGet("{email}")]
+        public Student GetStudent(string email)
         {
-            return _studentService.GetStudent(id);
+            return _studentService.GetStudentByMail(email);
         }
     }
 }

@@ -10,8 +10,8 @@ using idCardApp.API.Data;
 namespace idCardApi.Migrations
 {
     [DbContext(typeof(idCardContext))]
-    [Migration("20211114205726_idCard")]
-    partial class idCard
+    [Migration("20211116131154_idCardv2")]
+    partial class idCardv2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,7 +40,67 @@ namespace idCardApi.Migrations
                         {
                             StudentEmail = "jaak.metdebroek@student.pxl.be",
                             CourseId = 1
+                        },
+                        new
+                        {
+                            StudentEmail = "jaak.metdebroek@student.pxl.be",
+                            CourseId = 2
+                        },
+                        new
+                        {
+                            StudentEmail = "jos.indebroek@student.pxl.be",
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            StudentEmail = "jos.indebroek@student.pxl.be",
+                            CourseId = 2
+                        },
+                        new
+                        {
+                            StudentEmail = "jef.vandebroek@student.pxl.be",
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            StudentEmail = "jef.vandebroek@student.pxl.be",
+                            CourseId = 2
+                        },
+                        new
+                        {
+                            StudentEmail = "jakie.Uitdebroek@student.pxl.be",
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            StudentEmail = "jakie.Uitdebroek@student.pxl.be",
+                            CourseId = 2
+                        },
+                        new
+                        {
+                            StudentEmail = "john.zonderbroek@student.pxl.be",
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            StudentEmail = "john.zonderbroek@student.pxl.be",
+                            CourseId = 2
                         });
+                });
+
+            modelBuilder.Entity("idCardApi.Models.StudentPE", b =>
+                {
+                    b.Property<string>("StudentEmail")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("PeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("StudentEmail", "PeId");
+
+                    b.HasIndex("PeId");
+
+                    b.ToTable("StudentPE");
                 });
 
             modelBuilder.Entity("idCardApp.API.Models.Course", b =>
@@ -72,19 +132,17 @@ namespace idCardApi.Migrations
 
             modelBuilder.Entity("idCardApp.API.Models.Lector", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Firstname")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -92,9 +150,12 @@ namespace idCardApi.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("Email");
 
                     b.HasIndex("CourseId")
+                        .IsUnique();
+
+                    b.HasIndex("Email")
                         .IsUnique();
 
                     b.ToTable("Lectors");
@@ -102,19 +163,19 @@ namespace idCardApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CourseId = 1,
                             Email = "kris.hermans@pxl.be",
+                            CourseId = 1,
                             Firstname = "Kris",
+                            Id = 1,
                             Name = "Hermans",
                             Role = 1
                         },
                         new
                         {
-                            Id = 2,
-                            CourseId = 2,
                             Email = "tom.schuyten@pxl.be",
+                            CourseId = 2,
                             Firstname = "Tom",
+                            Id = 2,
                             Name = "Schuyten",
                             Role = 1
                         });
@@ -149,6 +210,27 @@ namespace idCardApi.Migrations
                             CourseId = 1,
                             Date = new DateTime(2021, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Type = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CourseId = 1,
+                            Date = new DateTime(2021, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Type = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CourseId = 2,
+                            Date = new DateTime(2021, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Type = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CourseId = 1,
+                            Date = new DateTime(2021, 11, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Type = 0
                         });
                 });
 
@@ -166,6 +248,9 @@ namespace idCardApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PEDateId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
@@ -173,6 +258,8 @@ namespace idCardApi.Migrations
 
                     b.HasIndex("Email")
                         .IsUnique();
+
+                    b.HasIndex("PEDateId");
 
                     b.ToTable("Students");
 
@@ -200,6 +287,22 @@ namespace idCardApi.Migrations
                             Id = 3,
                             Name = "Vandebroek",
                             Role = 0
+                        },
+                        new
+                        {
+                            Email = "jakie.Uitdebroek@student.pxl.be",
+                            Firstname = "Jakie",
+                            Id = 4,
+                            Name = "Uitdebroek",
+                            Role = 0
+                        },
+                        new
+                        {
+                            Email = "john.zonderbroek@student.pxl.be",
+                            Firstname = "John",
+                            Id = 5,
+                            Name = "Zonderbroek",
+                            Role = 0
                         });
                 });
 
@@ -213,6 +316,21 @@ namespace idCardApi.Migrations
 
                     b.HasOne("idCardApp.API.Models.Student", "Student")
                         .WithMany("Courses")
+                        .HasForeignKey("StudentEmail")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("idCardApi.Models.StudentPE", b =>
+                {
+                    b.HasOne("idCardApp.API.Models.PEDate", "PeDate")
+                        .WithMany("AllStudents")
+                        .HasForeignKey("PeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("idCardApp.API.Models.Student", "Student")
+                        .WithMany("PeDates")
                         .HasForeignKey("StudentEmail")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -234,6 +352,13 @@ namespace idCardApi.Migrations
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("idCardApp.API.Models.Student", b =>
+                {
+                    b.HasOne("idCardApp.API.Models.PEDate", null)
+                        .WithMany("PresentStudents")
+                        .HasForeignKey("PEDateId");
                 });
 #pragma warning restore 612, 618
         }

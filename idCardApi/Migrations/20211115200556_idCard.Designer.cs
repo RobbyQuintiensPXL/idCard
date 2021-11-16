@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using idCardApp.API.Data;
 
 namespace idCardApi.Migrations
 {
     [DbContext(typeof(idCardContext))]
-    partial class idCardContextModelSnapshot : ModelSnapshot
+    [Migration("20211115200556_idCard")]
+    partial class idCard
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,146 +85,6 @@ namespace idCardApi.Migrations
                         {
                             StudentEmail = "john.zonderbroek@student.pxl.be",
                             CourseId = 2
-                        });
-                });
-
-            modelBuilder.Entity("idCardApi.Models.StudentPE", b =>
-                {
-                    b.Property<string>("StudentEmail")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("PeId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Attented")
-                        .HasColumnType("bit");
-
-                    b.HasKey("StudentEmail", "PeId");
-
-                    b.HasIndex("PeId");
-
-                    b.ToTable("StudentPE");
-
-                    b.HasData(
-                        new
-                        {
-                            StudentEmail = "jaak.metdebroek@student.pxl.be",
-                            PeId = 1,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jos.indebroek@student.pxl.be",
-                            PeId = 1,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jef.vandebroek@student.pxl.be",
-                            PeId = 1,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jakie.Uitdebroek@student.pxl.be",
-                            PeId = 1,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "john.zonderbroek@student.pxl.be",
-                            PeId = 1,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jaak.metdebroek@student.pxl.be",
-                            PeId = 2,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jos.indebroek@student.pxl.be",
-                            PeId = 2,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jef.vandebroek@student.pxl.be",
-                            PeId = 2,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jakie.Uitdebroek@student.pxl.be",
-                            PeId = 2,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "john.zonderbroek@student.pxl.be",
-                            PeId = 2,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jaak.metdebroek@student.pxl.be",
-                            PeId = 3,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jos.indebroek@student.pxl.be",
-                            PeId = 3,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jef.vandebroek@student.pxl.be",
-                            PeId = 3,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jakie.Uitdebroek@student.pxl.be",
-                            PeId = 3,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "john.zonderbroek@student.pxl.be",
-                            PeId = 3,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jaak.metdebroek@student.pxl.be",
-                            PeId = 4,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jos.indebroek@student.pxl.be",
-                            PeId = 4,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jef.vandebroek@student.pxl.be",
-                            PeId = 4,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "jakie.Uitdebroek@student.pxl.be",
-                            PeId = 4,
-                            Attented = false
-                        },
-                        new
-                        {
-                            StudentEmail = "john.zonderbroek@student.pxl.be",
-                            PeId = 4,
-                            Attented = false
                         });
                 });
 
@@ -374,6 +236,9 @@ namespace idCardApi.Migrations
                     b.Property<int?>("PEDateId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PEDateId1")
+                        .HasColumnType("int");
+
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
@@ -383,6 +248,8 @@ namespace idCardApi.Migrations
                         .IsUnique();
 
                     b.HasIndex("PEDateId");
+
+                    b.HasIndex("PEDateId1");
 
                     b.ToTable("Students");
 
@@ -444,21 +311,6 @@ namespace idCardApi.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("idCardApi.Models.StudentPE", b =>
-                {
-                    b.HasOne("idCardApp.API.Models.PEDate", "PeDate")
-                        .WithMany("AllStudents")
-                        .HasForeignKey("PeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("idCardApp.API.Models.Student", "Student")
-                        .WithMany("PeDates")
-                        .HasForeignKey("StudentEmail")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("idCardApp.API.Models.Lector", b =>
                 {
                     b.HasOne("idCardApp.API.Models.Course", "Course")
@@ -480,8 +332,12 @@ namespace idCardApi.Migrations
             modelBuilder.Entity("idCardApp.API.Models.Student", b =>
                 {
                     b.HasOne("idCardApp.API.Models.PEDate", null)
-                        .WithMany("PresentStudents")
+                        .WithMany("AbsentStudents")
                         .HasForeignKey("PEDateId");
+
+                    b.HasOne("idCardApp.API.Models.PEDate", null)
+                        .WithMany("PresetStudents")
+                        .HasForeignKey("PEDateId1");
                 });
 #pragma warning restore 612, 618
         }
