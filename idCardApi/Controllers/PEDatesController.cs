@@ -1,4 +1,5 @@
-﻿using idCardApi.Services;
+﻿using idCardApi.Models;
+using idCardApi.Services;
 using idCardApp.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +15,12 @@ namespace idCardApi.Controllers
     public class PEDatesController : Controller
     {
         private readonly IPEDateService _pEDateService;
+        private readonly StudentPEService _studentPEService;
 
-        public PEDatesController(IPEDateService pEDateService)
+        public PEDatesController(IPEDateService pEDateService, StudentPEService studentPEService)
         {
             _pEDateService = pEDateService;
+            _studentPEService = studentPEService;
         }
 
         [HttpGet]
@@ -38,6 +41,13 @@ namespace idCardApi.Controllers
         public Task<PEDate> GetPEDate(int id)
         {
             return _pEDateService.GetPEDate(id);
+        }
+
+        [HttpPut("{{id}}")]
+        public string PutStudentPE(StudentPE studentPE)
+        {
+            _studentPEService.UpdateStudent(studentPE);
+            return "test";
         }
 
 

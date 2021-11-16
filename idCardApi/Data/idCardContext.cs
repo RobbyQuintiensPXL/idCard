@@ -16,6 +16,7 @@ namespace idCardApp.API.Data
         public DbSet<PEDate> PEDates { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<StudentCourse> StudentCourses { get; set; }
+        public DbSet<StudentPE> StudentPEs { get; set; }
 
 
         public idCardContext(DbContextOptions<idCardContext> options) : base(options) { }
