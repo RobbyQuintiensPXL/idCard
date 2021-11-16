@@ -47,7 +47,6 @@ namespace idCardApp.API.Data
             modelBuilder.Entity<StudentPE>().HasOne(s => s.PeDate).WithMany(s => s.AllStudents).HasForeignKey(p => p.PeId);
 
 
-
             //Seed Data
 
             var students = new[]

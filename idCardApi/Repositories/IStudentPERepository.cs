@@ -8,6 +8,8 @@ namespace idCardApi.Repositories
 {
     public interface IStudentPERepository
     {
-        void UpdateAttented(StudentPE studentPE);
+        StudentPE GetPE(int id);
+
+        void UpdateStudentStatus(int id, string email);
     }
 }

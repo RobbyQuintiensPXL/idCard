@@ -7,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace idCardApi.Repositories
 {
-    public class StudentPERepository : BaseRepository, IStudentPERepository
+    public class StudentPERepository: BaseRepository, IStudentPERepository
     {
         public StudentPERepository(idCardContext context): base(context)
         {
 
         }
-        public void UpdateAttented(StudentPE studentPE)
+
+        public StudentPE GetPE(int id)
         {
-            var student = _context.StudentPEs.Where(x => x.StudentEmail == studentPE.StudentEmail).FirstOrDefault();
-            student.Attented = true;
+            return _context.StudentPEs.FirstOrDefault(p => p.PeId == id);
+        }
+
+        public void UpdateStudentStatus(int id, string email)
+        {
+            StudentPE foundStudent = _context.StudentPEs.Where(s => s.PeId == id).FirstOrDefault(s => String.Equals(s.StudentEmail, email));
+            foundStudent.Attented = true;
+            _context.SaveChanges();
         }
     }
 }

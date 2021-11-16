@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using idCardApp.API.Data;
 
 namespace idCardApi.Migrations
 {
     [DbContext(typeof(idCardContext))]
-    partial class idCardContextModelSnapshot : ModelSnapshot
+    [Migration("20211116195311_idCardv4")]
+    partial class idCardv4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

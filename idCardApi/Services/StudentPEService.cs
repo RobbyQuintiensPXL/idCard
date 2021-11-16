@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace idCardApi.Services
 {
-    public class StudentPEService
+    public class StudentPEService: IStudentPEService
     {
         private IStudentPERepository _studentPERepository;
 
@@ -16,9 +16,14 @@ namespace idCardApi.Services
             _studentPERepository = studentPERepository;
         }
 
-        public void UpdateStudent(StudentPE studentPE)
+        public StudentPE GetPe(int id)
         {
-            _studentPERepository.UpdateAttented(studentPE);
+            return _studentPERepository.GetPE(id);
+        }
+
+        public void UpdateStudentPEStatus(int id, string email)
+        {
+            _studentPERepository.UpdateStudentStatus(id, email);
         }
     }
 }

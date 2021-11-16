@@ -43,11 +43,13 @@ namespace idCardApi
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ILectorRepository, LectorRepository>();
             services.AddScoped<IStudentCourseRepository, StudentCourseRepository>();
+            services.AddScoped<IStudentPERepository, StudentPERepository>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IPEDateService, PEDateService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ILectorService, LectorService>();
             services.AddScoped<IStudentCourseService, StudentCourseService>();
+            services.AddScoped<IStudentPEService, StudentPEService>();
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

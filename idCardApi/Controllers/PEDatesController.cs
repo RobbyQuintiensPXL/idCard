@@ -15,12 +15,11 @@ namespace idCardApi.Controllers
     public class PEDatesController : Controller
     {
         private readonly IPEDateService _pEDateService;
-        private readonly StudentPEService _studentPEService;
+        
 
-        public PEDatesController(IPEDateService pEDateService, StudentPEService studentPEService)
+        public PEDatesController(IPEDateService pEDateService)
         {
             _pEDateService = pEDateService;
-            _studentPEService = studentPEService;
         }
 
         [HttpGet]
@@ -41,13 +40,6 @@ namespace idCardApi.Controllers
         public Task<PEDate> GetPEDate(int id)
         {
             return _pEDateService.GetPEDate(id);
-        }
-
-        [HttpPut("{{id}}")]
-        public string PutStudentPE(StudentPE studentPE)
-        {
-            _studentPEService.UpdateStudent(studentPE);
-            return "test";
         }
 
 
