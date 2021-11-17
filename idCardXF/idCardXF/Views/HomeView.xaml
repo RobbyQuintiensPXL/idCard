@@ -10,10 +10,23 @@
                                    Style="{StaticResource TitleLabelStyle}">
                     </Label>
                 </Frame>
-                <StackLayout Margin="15,-50,15,0">
-                    <Frame BackgroundColor="White" HasShadow="True" HeightRequest="220" HorizontalOptions="FillAndExpand">
+                <StackLayout Margin="15,-75,15,0">
+                    <Frame BackgroundColor="White" HasShadow="True" CornerRadius="20" HeightRequest="190" HorizontalOptions="FillAndExpand">
                         <StackLayout>
-                            <Entry Placeholder="email@email.be"></Entry>
+                            <StackLayout Margin="0,25,0,0">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="20" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal" Padding="15,5,15,5">
+                                        <Entry Placeholder="email@email.be" HorizontalOptions="FillAndExpand"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Margin="0,30,0,0">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <Button Text="SIGN IN" BackgroundColor="LightBlue" Padding="0,17,0,17" TextColor="White" FontAttributes="Bold" CornerRadius="20">
+
+                                    </Button>
+                                </StackLayout>
+                            </StackLayout>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
