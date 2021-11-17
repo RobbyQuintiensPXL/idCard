@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="idCardXF.Views.HomeView">
+    <StackLayout Padding="0">
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="LightBlue" HeightRequest="330" HorizontalOptions="FillAndExpand">
+                    <Label Text="idCard"
+                                   Style="{StaticResource TitleLabelStyle}">
+                    </Label>
+                </Frame>
+                <StackLayout Margin="15,-50,15,0">
+                    <Frame BackgroundColor="White" HasShadow="True" HeightRequest="220" HorizontalOptions="FillAndExpand">
+                        <StackLayout>
+                            <Entry Placeholder="email@email.be"></Entry>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>
