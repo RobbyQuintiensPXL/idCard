@@ -15,9 +15,9 @@ namespace idCardApp.API.Repositories
         {
 
         }
-        public Lector GetLector(int id)
+        public async Task<Lector> GetLector(string email)
         {
-            return _context.Lectors.FirstOrDefault(l => l.Id == id);
+            return await _context.Lectors.Where(l => l.Email == email).FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Lector>> ListAsync()

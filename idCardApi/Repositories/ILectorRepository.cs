@@ -10,6 +10,6 @@ namespace idCardApp.API.Repositories
     {
         Task<IEnumerable<Lector>> ListAsync();
 
-        Lector GetLector(int id);
+        Task<Lector> GetLector(string email);
     }
 }

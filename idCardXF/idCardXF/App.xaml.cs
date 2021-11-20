@@ -15,12 +15,15 @@ namespace idCardXF
     {
         public static NavigationService NavigationService { get; } = new NavigationService();
         public static IStudentService StudentService { get; set; } = new StudentService(new StudentRepository());
+        public static ICourseService CourseService { get; set; } = new CourseService(new CourseRepository());
+        public static ILectorService LectorService { get; set; } = new LectorService(new LectorRepository());
         public App()
         {
             InitializeComponent();
 
             NavigationService.Configure(ViewNames.HomeView, typeof(HomeView));
             NavigationService.Configure(ViewNames.CoursesView, typeof(CoursesView));
+            NavigationService.Configure(ViewNames.LectorView, typeof(LectorView));
 
             MainPage = new NavigationPage(new HomeView());
         }

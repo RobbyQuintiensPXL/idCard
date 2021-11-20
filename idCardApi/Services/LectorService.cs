@@ -15,9 +15,9 @@ namespace idCardApi.Services
         {
             _lectorRepository = lectorRepository;
         }
-        public Lector GetLector(int id)
+        public async Task<Lector> GetLector(string email)
         {
-            return _lectorRepository.GetLector(id);
+            return await _lectorRepository.GetLector(email);
         }
 
         public async Task<IEnumerable<Lector>> ListAsync()

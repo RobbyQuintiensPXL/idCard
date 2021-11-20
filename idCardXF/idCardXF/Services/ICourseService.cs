@@ -10,6 +10,6 @@ namespace idCardXF.Services
     {
         //Course GetCourse(int id);
 
-        //List<IEnumerable<Course>> GetCourses();
+        Task<List<Lector>> GetCourses(string email);
     }
 }

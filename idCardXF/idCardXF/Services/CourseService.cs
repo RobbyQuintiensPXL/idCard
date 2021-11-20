@@ -1,4 +1,5 @@
 ﻿using idCardXF.Models;
+using idCardXF.Repository;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -9,20 +10,20 @@ namespace idCardXF.Services
 {
     public class CourseService : ICourseService
     {
-        private readonly HttpClient _httpClient;
+        private ICourseRepository _courseRepository;
 
-        public CourseService(HttpClient httpClient)
+        public CourseService(ICourseRepository courseRepository)
         {
-            _httpClient = httpClient;
+            _courseRepository = courseRepository;
         }
         //public Course GetCourse(int id)
         //{
         //    throw new NotImplementedException();
         //}
 
-        //public List<IEnumerable<Course>> GetCourses()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<List<Lector>> GetCourses(string email)
+        {
+            return await _courseRepository.GetAllCourses(email);
+        }
     }
 }

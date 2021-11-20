@@ -13,13 +13,15 @@ namespace idCardXF.ViewModels
     public class HomeViewViewModel : BaseViewModel
     {
         private readonly IStudentService _studentService;
+        private readonly ILectorService _lectorService;
         private readonly INavigationService _navigationService;
         private string emailAddress;
 
-        public HomeViewViewModel(IStudentService studentService, INavigationService navigationService)
+        public HomeViewViewModel(IStudentService studentService, ILectorService lectorService, INavigationService navigationService)
         {
             _studentService = studentService;
             _navigationService = navigationService;
+            _lectorService = lectorService;
 
             ButtonClicked = new Command(OnButtonClicked);
         }
@@ -38,11 +40,21 @@ namespace idCardXF.ViewModels
 
         public async void OnButtonClicked()
         {
-            Student student = await _studentService.GetStudent(emailAddress);
-            if(student != null)
+            if (emailAddress.Contains("student"))
             {
-                _navigationService.NavigateTo("CoursesView");
+                Student student = await _studentService.GetStudent(emailAddress);
+                if (student != null)
+                {
+                    _navigationService.NavigateTo("CoursesView", student);
+                }
+            } else {
+                Lector lector = await _lectorService.GetLector(emailAddress);
+                if(lector != null)
+                {
+                    _navigationService.NavigateTo("LectorView");
+                }
             }
+            
         }
     }
 }

@@ -27,10 +27,10 @@ namespace idCardApi.Controllers
             return lectors;
         }
 
-        [HttpGet("{id}")]
-        public Lector GetLector(int id)
+        [HttpGet("{email}")]
+        public async Task<Lector> GetLector(string email)
         {
-            return _lectorService.GetLector(id);
+            return await _lectorService.GetLector(email);
         }
     }
 }
