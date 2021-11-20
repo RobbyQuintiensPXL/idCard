@@ -1,0 +1,16 @@
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\bin\Debug\netstandard2.1\idCardXF.deps.json
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\bin\Debug\netstandard2.1\idCardXF.dll
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\bin\Debug\netstandard2.1\ref\idCardXF.dll
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\bin\Debug\netstandard2.1\idCardXF.pdb
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.csprojAssemblyReference.cache
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\App.xaml.g.cs
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\Views\HomeView.xaml.g.cs
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.AssemblyInfoInputs.cache
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.AssemblyInfo.cs
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.csproj.CoreCompileInputs.cache
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\XamlC.stamp
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.dll
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\ref\idCardXF.dll
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.pdb
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\Views\CoursesView.xaml.g.cs
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\Views\LectorTestPage.xaml.g.cs

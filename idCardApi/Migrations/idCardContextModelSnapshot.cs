@@ -15,8 +15,8 @@ namespace idCardApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.19")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("idCardApi.Models.StudentCourse", b =>
@@ -437,6 +437,10 @@ namespace idCardApi.Migrations
                         .HasForeignKey("StudentEmail")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("idCardApi.Models.StudentPE", b =>
@@ -452,6 +456,10 @@ namespace idCardApi.Migrations
                         .HasForeignKey("StudentEmail")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("PeDate");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("idCardApp.API.Models.Lector", b =>
@@ -461,6 +469,8 @@ namespace idCardApi.Migrations
                         .HasForeignKey("idCardApp.API.Models.Lector", "CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
                 });
 
             modelBuilder.Entity("idCardApp.API.Models.PEDate", b =>
@@ -470,6 +480,29 @@ namespace idCardApi.Migrations
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("idCardApp.API.Models.Course", b =>
+                {
+                    b.Navigation("Lector");
+
+                    b.Navigation("PeDates");
+
+                    b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("idCardApp.API.Models.PEDate", b =>
+                {
+                    b.Navigation("AllStudents");
+                });
+
+            modelBuilder.Entity("idCardApp.API.Models.Student", b =>
+                {
+                    b.Navigation("Courses");
+
+                    b.Navigation("PeDates");
                 });
 #pragma warning restore 612, 618
         }

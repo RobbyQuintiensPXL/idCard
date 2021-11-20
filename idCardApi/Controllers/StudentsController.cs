@@ -28,9 +28,11 @@ namespace idCardApi.Controllers
         }
 
         [HttpGet("{email}")]
-        public Student GetStudent(string email)
+        public async Task<IActionResult> GetStudent(string email)
         {
-            return _studentService.GetStudentByMail(email);
+            var student = await _studentService.GetStudentByMail(email);
+            return Ok(student);
         }
+
     }
 }

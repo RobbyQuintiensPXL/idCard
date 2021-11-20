@@ -50,7 +50,7 @@ namespace idCardApi
             services.AddScoped<ILectorService, LectorService>();
             services.AddScoped<IStudentCourseService, StudentCourseService>();
             services.AddScoped<IStudentPEService, StudentPEService>();
-            services.AddMvc(option => option.EnableEndpointRouting = false);
+            //services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
@@ -72,17 +72,26 @@ namespace idCardApi
 
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseMvc();
+            //app.UseMvc();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
         }
 
 
         //api rest calls 
         // /api/courses
-        /// api/courses
-        /// api/courses/1
-        /// api/pedates
-        /// api/pedates/1
-        /// api/studentpe/1 (PUT)
+        // /api/courses
+        // /api/courses/1
+        // /api/pedates
+        // /api/pedates/1
+        // /api/studentpe/1 (PUT)
+        // /api/lectors
+        // /api/lectors/1
+
+        // TODO get courses by StudentMail
     }
 }

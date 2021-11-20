@@ -21,11 +21,13 @@ namespace idCardApp.API.Models
         public int Id { get => _id; set => _id = value; }
         public string Firstname { get => _firstname; set => _firstname = value; }
         public string Name { get => _name; set => _name = value; }
+        [JsonIgnore]
         public Role Role { get => _role; set => _role = value; }
         public string Email { get => _email; set => _email = value; }
-
         [JsonIgnore]
         public virtual ICollection<StudentCourse> Courses { get => _courses; set => _courses = value; }
+
+        [JsonIgnore]
         public ICollection<StudentPE> PeDates { get => _peDates; set => _peDates = value; }
     }
 }

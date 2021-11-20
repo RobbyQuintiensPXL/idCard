@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
+using BethanysPieShopStockApp.Utility;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +11,8 @@ namespace idCardXF.Views
         public HomeView()
         {
             InitializeComponent();
+
+            BindingContext = ViewModelLocator.HomeViewViewModel;
         }
     }
 }

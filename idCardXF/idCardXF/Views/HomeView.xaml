@@ -7,7 +7,8 @@
             <StackLayout Padding="0" Margin="0">
                 <Frame BackgroundColor="LightBlue" HeightRequest="330" HorizontalOptions="FillAndExpand">
                     <Label Text="idCard"
-                                   Style="{StaticResource TitleLabelStyle}">
+                           FontFamily="Lobster"
+                           Style="{StaticResource TitleLabelStyle}">
                     </Label>
                 </Frame>
                 <StackLayout Margin="15,-75,15,0">
@@ -16,13 +17,13 @@
                             <StackLayout Margin="0,25,0,0">
                                 <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="20" HorizontalOptions="FillAndExpand">
                                     <StackLayout Orientation="Horizontal" Padding="15,5,15,5">
-                                        <Entry Placeholder="email@email.be" HorizontalOptions="FillAndExpand"></Entry>
+                                        <Entry x:Name="emailEntry" Text="{ Binding EmailBinding}" Placeholder="email@email.be" HorizontalOptions="FillAndExpand"></Entry>
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
                             <StackLayout Margin="0,30,0,0">
                                 <StackLayout HorizontalOptions="FillAndExpand">
-                                    <Button Text="SIGN IN" BackgroundColor="LightBlue" Padding="0,17,0,17" TextColor="White" FontAttributes="Bold" CornerRadius="20">
+                                    <Button Text="SIGN IN" Command="{Binding ButtonClicked}" BackgroundColor="LightBlue" FontSize="Medium" Padding="0,15,0,15" TextColor="White" FontAttributes="Bold" CornerRadius="20">
 
                                     </Button>
                                 </StackLayout>
