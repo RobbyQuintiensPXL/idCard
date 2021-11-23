@@ -13,5 +13,7 @@ namespace idCardApi.Services
         Student GetStudent(int id);
 
         Task<Student> GetStudentByMail(string email);
+
+
     }
 }

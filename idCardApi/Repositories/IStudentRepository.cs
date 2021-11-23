@@ -13,5 +13,7 @@ namespace idCardApi.Repositories
         Student GetStudent(int id);
 
         Task<Student> GetStudentByMail(string email);
+
+        Task<IEnumerable<Student>> ListCourses(string email);
     }
 }

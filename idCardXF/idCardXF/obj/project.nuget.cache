@@ -1,13 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "MWrV+Tn4a0WC/H1F4I/1FlHGTov/vw6oMmKfq+hiDfB6RUPE4Rel4R36sBURiya9jP2AO0gI2710b6+i9xpoBg==",
+  "dgSpecHash": "LPKltOxn7t4Pesnw4GvqFHn+W2QasOmXh6Ty3/uDj6WDp0iVkYtdZ1jSmDXUSn32kyANnNnya74IAM18+p9kdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardXF\\idCardXF\\idCardXF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\robby\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
+    "C:\\Users\\robby\\.nuget\\packages\\xamarinforms.cardview\\1.1.1.5\\xamarinforms.cardview.1.1.1.5.nupkg.sha512",
+    "C:\\Users\\robby\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
+    "C:\\Users\\robby\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'XamarinForms.CardView 1.1.1.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "XamarinForms.CardView",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.1"
+      ]
+    }
+  ]
 }

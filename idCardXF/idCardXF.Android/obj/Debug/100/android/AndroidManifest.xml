@@ -4,6 +4,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="idCardXF.Android" android:theme="@style/MainTheme">
     <activity android:name="crc640bddbea5f9771c8c.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="idCardXF" android:theme="@style/MainTheme">
@@ -20,6 +21,7 @@
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
     </provider>
     <receiver android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" android:enabled="true" android:exported="false" />
+    <activity android:name="crc6480997b3ef81bf9b2.ZxingActivity" android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" />
     <provider android:name="mono.MonoRuntimeProvider" android:authorities="com.companyname.idcardxf.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="1999999999" />
     <!-- suppress ExportedReceiver -->
     <receiver android:name="mono.android.Seppuku">

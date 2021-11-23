@@ -21,11 +21,11 @@ namespace idCardApi.Controllers
             _studentCourseService = studentCourseService;
         }
 
-        [HttpGet("{id}")]
-        public async Task<IEnumerable<Student>> StudentsAsync(int id)
+        [HttpGet("{email}")]
+        public async Task<IEnumerable<StudentCourse>> CoursesAsync(string email)
         {
-            var students = await _studentCourseService.ListAsyncStudents(id);
-            return students;
+            var courses = await _studentCourseService.ListAsyncCourses(email);
+            return courses;
         }
 
         [HttpGet]

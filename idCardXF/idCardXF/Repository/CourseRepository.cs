@@ -3,6 +3,7 @@ using idCardXF.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,16 @@ namespace idCardXF.Repository
             _httpClient = new HttpClient(DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler());
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         }
-        public async Task<List<Lector>> GetAllCourses(string email)
+        public async Task<IEnumerable<StudentCourse>> GetAllCourses(string email)
         {
-            var url = new Uri($"{mainUrl}/api/students/{email}/courses");
+            var url = new Uri($"{mainUrl}/api/studentcourses/{email}");
 
             var response = await _httpClient.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<Lector>>(content);
+                return JsonConvert.DeserializeObject<IEnumerable<StudentCourse>>(content);
             }
             return null;
         }

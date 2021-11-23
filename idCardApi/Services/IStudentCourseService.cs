@@ -9,7 +9,7 @@ namespace idCardApi.Services
 {
     public interface IStudentCourseService
     {
-        Task<IEnumerable<Student>> ListAsyncStudents(int id);
+        Task<IEnumerable<StudentCourse>> ListAsyncCourses(string email);
         Task<IEnumerable<StudentCourse>> ListAsync();
 
     }

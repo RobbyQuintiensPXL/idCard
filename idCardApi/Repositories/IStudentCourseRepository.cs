@@ -11,6 +11,6 @@ namespace idCardApi.Repositories
     {
         Task<IEnumerable<StudentCourse>> ListAsync();
 
-        Task<IEnumerable<Student>> GetStudents(int id);
+        Task<IEnumerable<StudentCourse>> GetCourses(string email);
     }
 }

@@ -16,9 +16,9 @@ namespace idCardApi.Services
         {
             _studentCourseRepository = studentCourseRepository;
         }
-        public async Task<IEnumerable<Student>> ListAsyncStudents(int id)
+        public async Task<IEnumerable<StudentCourse>> ListAsyncCourses(string email)
         {
-            return await _studentCourseRepository.GetStudents(id);
+            return await _studentCourseRepository.GetCourses(email);
         }
 
         public async Task<IEnumerable<StudentCourse>> ListAsync()

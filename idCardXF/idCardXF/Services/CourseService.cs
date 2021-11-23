@@ -2,6 +2,7 @@
 using idCardXF.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace idCardXF.Services
         //    throw new NotImplementedException();
         //}
 
-        public async Task<List<Lector>> GetCourses(string email)
+        public async Task<IEnumerable<StudentCourse>> GetCourses(string email)
         {
             return await _courseRepository.GetAllCourses(email);
         }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oVZP7mWrpSWXnsSO8z1Ydvkjfa2JxQPUHVbzBgrGjceDusYb6A0NisMweObFItkr4MYDzjSJlpBv9BdffMSABQ==",
+  "dgSpecHash": "G2XYG7oHM+zUQTrzf4a0bFiRLqehK6/fXBDfwf+Nfvu6NI+hGb5PLuhjR87F53cgPUorwauA4ns9Z5bpj6sQcw==",
   "success": true,
   "projectFilePath": "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardApi\\idCardApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\robby\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.12\\microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.12.nupkg.sha512",
@@ -68,7 +69,7 @@
     "C:\\Users\\robby\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\robby\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\robby\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",

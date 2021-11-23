@@ -1,14 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing.portable"
              x:Class="idCardXF.Views.CoursesView"
-             BackgroundColor="LightBlue"
              Title="Student Courses">
     <StackLayout Padding="0">
-        <StackLayout Orientation="Horizontal" Margin="0,20,20,0" HorizontalOptions="End"   >
-            <Label Text="Welcome" FontSize="20" FontAttributes="Bold"  TextColor="White"></Label>
-            <Label Text="{ Binding SelectedStudent.Firstname}" FontAttributes="Bold"  FontSize="20" TextColor="White"></Label>
-        </StackLayout>
-        
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="LightBlue" HeightRequest="330" HorizontalOptions="FillAndExpand">
+                    <ListView ItemsSource="{Binding Courses}" Margin="0,20,0,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+
+                                        <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="White">
+
+                                            <Label Text="{Binding Course.Name}" FontSize="25" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"></Label>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+                <StackLayout Margin="15,-75,15,0">
+                    <Frame BackgroundColor="White" HasShadow="True" CornerRadius="20" HeightRequest="190" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <zxing:ZXingBarcodeImageView BarcodeValue="{Binding SelectedStudent.Email}" WidthRequest="300" HeightRequest="300">
+                                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                                    <zxingcommon:EncodingOptions Height="300" Width="300"></zxingcommon:EncodingOptions>
+                                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                            </zxing:ZXingBarcodeImageView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </StackLayout>
 </ContentPage>

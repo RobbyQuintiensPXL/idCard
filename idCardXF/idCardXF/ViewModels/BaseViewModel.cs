@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace idCardXF.ViewModels
 {
@@ -14,9 +15,9 @@ namespace idCardXF.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public virtual void Initialize(object parameter)
+        public virtual Task InitializeAsync(object data)
         {
-
+            return Task.FromResult(false);
         }
     }
 }

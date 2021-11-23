@@ -29,5 +29,10 @@ namespace idCardApi.Repositories
         {
             return await _context.Students.ToListAsync();
         }
+
+        public async Task<IEnumerable<Student>> ListCourses(string email)
+        {
+            return await _context.Students.Include(c => c.Courses).ThenInclude(x => x.CourseId).ToListAsync();
+        }
     }
 }
