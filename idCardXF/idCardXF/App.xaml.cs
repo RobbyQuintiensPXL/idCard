@@ -17,6 +17,7 @@ namespace idCardXF
         public static IStudentService StudentService { get; set; } = new StudentService(new StudentRepository());
         public static ICourseService CourseService { get; set; } = new CourseService(new CourseRepository());
         public static ILectorService LectorService { get; set; } = new LectorService(new LectorRepository());
+        public static IPEDateService PEDateService { get; set; } = new PEDateService(new PEDateRepository());
         public App()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace idCardXF
             NavigationService.Configure(ViewNames.HomeView, typeof(HomeView));
             NavigationService.Configure(ViewNames.CoursesView, typeof(CoursesView));
             NavigationService.Configure(ViewNames.LectorView, typeof(LectorView));
+            NavigationService.Configure(ViewNames.PEDatesView, typeof(PEDatesView));
 
             MainPage = new NavigationPage(new HomeView());
         }

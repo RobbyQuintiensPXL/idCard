@@ -22,7 +22,7 @@ namespace idCardApp.API.Models
 
         [JsonIgnore]
         public virtual ICollection<StudentCourse> Students { get => _students; set => _students = value; }
-        [JsonIgnore]
+
         public virtual ICollection<PEDate> PeDates { get => _peDates; set => _peDates = value; }
     }
 }

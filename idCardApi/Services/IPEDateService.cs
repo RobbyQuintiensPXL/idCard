@@ -10,7 +10,7 @@ namespace idCardApi.Services
     {
         Task<IEnumerable<PEDate>> ListAsync();
 
-        //Task<IEnumerable<PEDate>> ListByCourseIdAsync(int courseID);
+        Task<IEnumerable<PEDate>> ListByCourseIdAsync(int courseID);
 
         Task<PEDate> GetPEDate(int id);
     }

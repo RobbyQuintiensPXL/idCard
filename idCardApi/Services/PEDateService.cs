@@ -26,9 +26,9 @@ namespace idCardApi.Services
             return await _pEDateRepository.ListAsync();
         }
 
-        //public async Task<IEnumerable<PEDate>> ListByCourseIdAsync(int courseID)
-        //{
-        //    return await _pEDateRepository.GetByCourseId(courseID);
-        //}
+        public async Task<IEnumerable<PEDate>> ListByCourseIdAsync(int courseID)
+        {
+            return await _pEDateRepository.GetByCourseId(courseID);
+        }
     }
 }

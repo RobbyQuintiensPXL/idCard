@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace idCardXF.ViewModels
 {
@@ -24,6 +26,14 @@ namespace idCardXF.ViewModels
             _courseService = courseService;
             _navigationService = navigationService;
 
+            CourseSelectedCommand = new Command<StudentCourse>(OnCourseSelectedCommand);
+        }
+
+        public ICommand CourseSelectedCommand { get; }
+
+        private void OnCourseSelectedCommand(StudentCourse selectedCourse)
+        {
+            _navigationService.NavigateTo("PEDatesView", selectedCourse);
         }
 
         public Student SelectedStudent
@@ -41,7 +51,7 @@ namespace idCardXF.ViewModels
             get => _courses;
             set
             {
-                _courses = value;
+                _courses = value;   
                 OnPropertyChanged();
             }
         }

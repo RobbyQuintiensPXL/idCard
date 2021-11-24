@@ -14,3 +14,4 @@ C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstan
 C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\idCardXF.pdb
 C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\Views\CoursesView.xaml.g.cs
 C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\Views\LectorView.xaml.g.cs
+C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF\obj\Debug\netstandard2.1\Views\PEDatesView.xaml.g.cs

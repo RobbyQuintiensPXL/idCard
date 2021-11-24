@@ -1,4 +1,5 @@
-﻿using idCardApi.Services;
+﻿using AutoMapper;
+using idCardApi.Services;
 using idCardApp.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;

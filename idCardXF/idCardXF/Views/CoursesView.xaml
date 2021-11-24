@@ -3,13 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             xmlns:behaviors="clr-namespace:idCardXF.Behaviors;assembly=idCardXF"
              x:Class="idCardXF.Views.CoursesView"
              Title="Student Courses">
     <StackLayout Padding="0">
         <Grid>
             <StackLayout Padding="0" Margin="0">
                 <Frame BackgroundColor="LightBlue" HeightRequest="330" HorizontalOptions="FillAndExpand">
-                    <ListView ItemsSource="{Binding Courses}" Margin="0,20,0,0">
+                    <ListView ItemsSource="{Binding Courses}" Margin="0,20,0,0" x:Name="CourseListView" CachingStrategy="RecycleElement">
+                        <ListView.Behaviors>
+                            <behaviors:EventToCommandBehavior 
+                    EventName="ItemTapped" 
+                    Command="{Binding CourseSelectedCommand}" 
+                     EventArgsConverter="{StaticResource LocalItemTappedConverter}" >
+                            </behaviors:EventToCommandBehavior>
+                        </ListView.Behaviors>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
