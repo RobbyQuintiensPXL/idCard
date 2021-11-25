@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RrWDw1TVJPFJ458+eKUy0DUUEI1ksEvjCBhqcNxMZb6/w0GcNKis07A3wmJC8NtIDgZuEMRi0W4IER5mybOfNQ==",
+  "dgSpecHash": "gLwiYIaaKlFGPLGiG+2WERLlhRBcu7r13N+05FFjzf8BkTES8wbN9hvMHK6XvMjQh3tbdiPdk9x5RvMK7jUg7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\robby\\source\\repos\\idCardGit\\idCard\\idCardXF\\idCardXF.Android\\idCardXF.Android.csproj",
   "expectedPackageFiles": [
@@ -58,7 +58,6 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\xamarin.google.android.material\\1.0.0.1\\xamarin.google.android.material.1.0.0.1.nupkg.sha512",
-    "C:\\Users\\robby\\.nuget\\packages\\xamarinforms.cardview\\1.1.1.5\\xamarinforms.cardview.1.1.1.5.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
     "C:\\Users\\robby\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],

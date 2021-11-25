@@ -9,5 +9,7 @@ namespace idCardXF.Repository
     public interface IStudentRepository
     {
         Task<Student> GetStudent(string email);
+
+        Task<IEnumerable<Student>> GetStudentsByPEId(int id);
     }
 }

@@ -32,5 +32,10 @@ namespace idCardApi.Services
         {
             return await _studentRepository.ListAsync();
         }
+
+        public async Task<IEnumerable<Student>> GetStudentByPeId(int id)
+        {
+            return await _studentRepository.GetStudentsByPEId(id);
+        }
     }
 }

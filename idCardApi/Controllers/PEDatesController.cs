@@ -36,11 +36,11 @@ namespace idCardApi.Controllers
             return peDates;
         }
 
-        //[HttpGet("{id}")]
-        //public Task<PEDate> GetPEDate(int id)
-        //{
-        //    return _pEDateService.GetPEDate(id);
-        //}
+        [HttpGet("pe/{id}")]
+        public Task<PEDate> GetPEDate(int id)
+        {
+            return _pEDateService.GetPEDate(id);
+        }
 
 
     }

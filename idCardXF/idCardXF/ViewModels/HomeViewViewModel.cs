@@ -51,7 +51,7 @@ namespace idCardXF.ViewModels
                 Lector lector = await _lectorService.GetLector(emailAddress);
                 if(lector != null)
                 {
-                    _navigationService.NavigateTo("LectorView");
+                    _navigationService.NavigateTo("LectorView", lector);
                 }
             }
             

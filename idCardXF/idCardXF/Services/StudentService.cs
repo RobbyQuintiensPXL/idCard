@@ -21,5 +21,10 @@ namespace idCardXF.Services
         {
             return await _studentRepository.GetStudent(email);
         }
+
+        public async Task<IEnumerable<Student>> GetStudentByPEId(int id)
+        {
+            return await _studentRepository.GetStudentsByPEId(id);
+        }
     }
 }

@@ -49,18 +49,6 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "XamarinForms.CardView/1.1.1.5": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "2.5.0.122203"
-        },
-        "compile": {
-          "lib/portable45-net45+win8+wp8+wpa81/CardView.dll": {}
-        },
-        "runtime": {
-          "lib/portable45-net45+win8+wp8+wpa81/CardView.dll": {}
-        }
-      },
       "ZXing.Net.Mobile/2.4.1": {
         "type": "package",
         "compile": {
@@ -528,18 +516,6 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "XamarinForms.CardView/1.1.1.5": {
-      "sha512": "hINUX1T870jmEnXIAkZhG4kenuzbJZNZ76a3wnvAnTipFWIMtS0e7+xyNjAI2SyhgzH/2I9Xt46/RwU1mq4frw==",
-      "type": "package",
-      "path": "xamarinforms.cardview/1.1.1.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/portable45-net45+win8+wp8+wpa81/CardView.dll",
-        "xamarinforms.cardview.1.1.1.5.nupkg.sha512",
-        "xamarinforms.cardview.nuspec"
-      ]
-    },
     "ZXing.Net.Mobile/2.4.1": {
       "sha512": "iCL2WcqOyUnC1iFFdzXijk0EXfoLMDqW88MyhoTZigSyhJZM2C5hKgSZVyfx9E35tgkde/IZwHkk8cVDnbQlYg==",
       "type": "package",
@@ -590,7 +566,6 @@
       "Newtonsoft.Json >= 13.0.1",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.8.0.1451",
-      "XamarinForms.CardView >= 1.1.1.5",
       "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
   },
@@ -650,10 +625,6 @@
             "target": "Package",
             "version": "[4.8.0.1451, )"
           },
-          "XamarinForms.CardView": {
-            "target": "Package",
-            "version": "[1.1.1.5, )"
-          },
           "ZXing.Net.Mobile.Forms": {
             "target": "Package",
             "version": "[2.4.1, )"
@@ -677,17 +648,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'XamarinForms.CardView 1.1.1.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "XamarinForms.CardView",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }

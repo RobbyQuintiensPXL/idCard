@@ -114,10 +114,6 @@
               "target": "Package",
               "version": "[4.8.0.1451, )"
             },
-            "XamarinForms.CardView": {
-              "target": "Package",
-              "version": "[1.1.1.5, )"
-            },
             "ZXing.Net.Mobile.Forms": {
               "target": "Package",
               "version": "[2.4.1, )"

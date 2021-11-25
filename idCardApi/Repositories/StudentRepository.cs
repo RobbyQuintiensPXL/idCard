@@ -25,6 +25,11 @@ namespace idCardApi.Repositories
             return await _context.Students.Include(c => c.Courses).Where(s => s.Email == email).FirstOrDefaultAsync();
         }
 
+        public async Task<IEnumerable<Student>> GetStudentsByPEId(int id)
+        {
+            return await _context.Students.Include(p => p.PeDates.Where(p => p.PeId == id)).ToListAsync();
+        }
+
         public async Task<IEnumerable<Student>> ListAsync()
         {
             return await _context.Students.ToListAsync();

@@ -14,6 +14,8 @@ namespace idCardApi.Services
 
         Task<Student> GetStudentByMail(string email);
 
+        Task<IEnumerable<Student>> GetStudentByPeId(int id);
+
 
     }
 }

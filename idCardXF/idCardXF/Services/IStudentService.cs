@@ -9,5 +9,7 @@ namespace idCardXF.Services
     public interface IStudentService
     {
         Task<Student> GetStudent(string email);
+
+        Task<IEnumerable<Student>> GetStudentByPEId(int id);
     }
 }

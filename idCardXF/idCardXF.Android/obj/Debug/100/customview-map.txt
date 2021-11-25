@@ -26,6 +26,7 @@ com.google.android.material.tabs.TabLayout;C:\Users\robby\source\repos\idCardGit
 com.google.android.material.tabs.TabLayout;C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF.Android\obj\Debug\100\lp\43\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF.Android\obj\Debug\100\lp\43\jl\res\layout\tabbar.xml
 com.google.android.material.tabs.TabLayout;obj\Debug\100\res\layout\tabbar.xml
+crc64720bb2db43a66fe9.FormsViewPager;C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF.Android\obj\Debug\100\lp\43\jl\res\layout\rootlayout.xml
 declare-styleable;C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF.Android\obj\Debug\100\lp\43\jl\res\values\attrs.xml
 external-cache-path;C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF.Android\obj\Debug\100\lp\42\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\robby\source\repos\idCardGit\idCard\idCardXF\idCardXF.Android\obj\Debug\100\lp\42\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml

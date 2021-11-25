@@ -3,7 +3,6 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "idCardXF.Android.dll" comes first in this list. */
 		"idCardXF.Android.dll",
-		"CardView.dll",
 		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
 		"idCardXF.dll",

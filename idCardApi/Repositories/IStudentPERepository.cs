@@ -8,7 +8,7 @@ namespace idCardApi.Repositories
 {
     public interface IStudentPERepository
     {
-        StudentPE GetPE(int id);
+        Task<IEnumerable<StudentPE>> GetStudents(int id);
 
         void UpdateStudentStatus(int id, string email);
     }

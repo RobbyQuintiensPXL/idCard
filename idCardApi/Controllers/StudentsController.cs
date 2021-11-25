@@ -34,5 +34,12 @@ namespace idCardApi.Controllers
             return Ok(student);
         }
 
+        [HttpGet("pe/{peId}")]
+        public async Task<IEnumerable<Student>> GetStudentsByPEId(int id)
+        {
+            var students = await _studentService.GetStudentByPeId(id);
+            return students;
+        }
+
     }
 }

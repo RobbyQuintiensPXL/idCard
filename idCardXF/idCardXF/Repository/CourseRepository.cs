@@ -18,7 +18,7 @@ namespace idCardXF.Repository
 
         public CourseRepository()
         {
-            _httpClient = new HttpClient(DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler());
+             _httpClient = new HttpClient(DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler());
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         }
         public async Task<IEnumerable<StudentCourse>> GetAllCourses(string email)

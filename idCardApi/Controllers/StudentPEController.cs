@@ -25,5 +25,12 @@ namespace idCardApi.Controllers
             _studentPEService.UpdateStudentPEStatus(id, email);
             return Ok();
         }
+
+        [HttpGet("pe/{id}")]
+        public async Task<IEnumerable<StudentPE>> GetStudents(int id)
+        {
+            var students = await _studentPEService.GetStudents(id);
+            return students;
+        }
     }
 }

@@ -34,5 +34,19 @@ namespace idCardXF.Repository
             }
             return null;
         }
+
+        public async Task<IEnumerable<Student>> GetStudentsByPEId(int id)
+        {
+            var url = new Uri($"{mainUrl}/api/students/pe/{id}");
+
+            var response = await _httpClient.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<IEnumerable<Student>>(content);
+            }
+            return null;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using idCardApi.Models;
 using idCardApp.API.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ namespace idCardApi.Repositories
 
         }
 
-        public StudentPE GetPE(int id)
+        public async Task<IEnumerable<StudentPE>> GetStudents(int id)
         {
-            return _context.StudentPEs.FirstOrDefault(p => p.PeId == id);
+            return await _context.StudentPEs.Include(s => s.Student).Where(p => p.PeId == id).ToListAsync();
         }
 
         public void UpdateStudentStatus(int id, string email)
