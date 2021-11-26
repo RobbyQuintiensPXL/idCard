@@ -20,9 +20,9 @@ namespace idCardApi.Controllers
         }
 
         [HttpPut("{id}/{email}")]
-        public ActionResult UpdateStudentStatus(int id, string email)
+        public ActionResult UpdateStudentStatus(int id, string email, StudentPE studentPE)
         {
-            _studentPEService.UpdateStudentPEStatus(id, email);
+            _studentPEService.UpdateStudentPEStatus(id, email, studentPE);
             return Ok();
         }
 
@@ -31,6 +31,13 @@ namespace idCardApi.Controllers
         {
             var students = await _studentPEService.GetStudents(id);
             return students;
+        }
+
+        [HttpGet("{id}/{email}")]
+        public StudentPE GetStudentByIdAndEmail(int id, string email)
+        {
+            var studentPE = _studentPEService.GetStudentPEByIdAndEmail(id, email);
+            return studentPE;
         }
     }
 }

@@ -35,12 +35,27 @@ namespace idCardXF.Repository
             return null;
         }
 
-        public async Task ScanStudent(StudentPE studentPE, string email)
+        public async Task ScanStudent(int id, string email, StudentPE studentPE)
         {
             var json = JsonConvert.SerializeObject(studentPE);
             HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync($"{mainUrl}/studentpe/{studentPE.PeId}/{email}", content);
+            var response = await _httpClient.PutAsync($"{mainUrl}/api/studentpe/{id}/{email}", content);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task<StudentPE> GetStudentByIdAndEmail(int id, string email)
+        {
+            var url = new Uri($"{mainUrl}/api/studentpe/{id}/{email}");
+
+            var response = await _httpClient.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<StudentPE>(content);
+            }
+            return null;
         }
     }
 }

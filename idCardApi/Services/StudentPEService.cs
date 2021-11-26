@@ -16,14 +16,19 @@ namespace idCardApi.Services
             _studentPERepository = studentPERepository;
         }
 
+        public StudentPE GetStudentPEByIdAndEmail(int id, string email)
+        {
+            return _studentPERepository.GetStudentPEByIdAndEmail(id, email);
+        }
+
         public async Task<IEnumerable<StudentPE>> GetStudents(int id)
         {
             return await _studentPERepository.GetStudents(id);
         }
 
-        public void UpdateStudentPEStatus(int id, string email)
+        public void UpdateStudentPEStatus(int id, string email, StudentPE studentPE)
         {
-            _studentPERepository.UpdateStudentStatus(id, email);
+            _studentPERepository.UpdateStudentStatus(id, email, studentPE);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace idCardXF.ViewModels
     {
         private ObservableCollection<StudentPE> _studentsPE;
         private PEDate _pEDate;
-        private string _studentEmail;
+        public string _studentEmail;
 
         private readonly IStudentPEService _studentPEService;
         private readonly INavigationService _navigationService;
@@ -26,7 +26,23 @@ namespace idCardXF.ViewModels
             _navigationService = navigationService;
 
             SelectedPE = new PEDate();
+            SendButton = new Command(OnSendButtonClicked);
+        }
 
+        //public bool EmailScanned(object obj) => 
+        //    !String.IsNullOrEmpty(_studentEmail);
+
+
+        public ICommand SendButton { get; }
+
+        public string ScannedEmail
+        {
+            get => _studentEmail;
+            set
+            {
+                _studentEmail = value;
+                OnPropertyChanged();
+            }
         }
 
         public PEDate SelectedPE
@@ -46,6 +62,19 @@ namespace idCardXF.ViewModels
             {
                 _studentsPE = value;
                 OnPropertyChanged();
+            }
+        }
+
+
+
+        public async void OnSendButtonClicked()
+        {
+            if (!String.IsNullOrEmpty(_studentEmail))
+            {
+                StudentPE studentPE = await _studentPEService.GetStudentByIdAndEmail(SelectedPE.Id, _studentEmail);
+                studentPE.Attented = true;
+                await _studentPEService.ScanStudent(SelectedPE.Id, _studentEmail, studentPE);
+                ScannedEmail = null;
             }
         }
 

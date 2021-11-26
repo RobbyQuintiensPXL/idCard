@@ -10,6 +10,8 @@ namespace idCardApi.Repositories
     {
         Task<IEnumerable<StudentPE>> GetStudents(int id);
 
-        void UpdateStudentStatus(int id, string email);
+        void UpdateStudentStatus(int id, string email, StudentPE studentPE);
+
+        StudentPE GetStudentPEByIdAndEmail(int id, string email);
     }
 }

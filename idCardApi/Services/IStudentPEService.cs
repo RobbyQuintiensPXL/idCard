@@ -9,6 +9,8 @@ namespace idCardApi.Services
     public interface IStudentPEService
     {
         Task<IEnumerable<StudentPE>> GetStudents(int id);
-        void UpdateStudentPEStatus(int id, string email);
+        void UpdateStudentPEStatus(int id, string email, StudentPE studentPE);
+
+        StudentPE GetStudentPEByIdAndEmail(int id, string email);
     }
 }

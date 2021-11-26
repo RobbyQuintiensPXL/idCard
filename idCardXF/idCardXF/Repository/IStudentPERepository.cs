@@ -10,7 +10,9 @@ namespace idCardXF.Repository
     {
         Task<IEnumerable<StudentPE>> GetAllStudents(int peId);
 
-        Task ScanStudent(StudentPE studentPE, string email);
+        Task ScanStudent(int id, string email, StudentPE studentPE);
+
+        Task<StudentPE> GetStudentByIdAndEmail(int id, string email);
 
     }
 }

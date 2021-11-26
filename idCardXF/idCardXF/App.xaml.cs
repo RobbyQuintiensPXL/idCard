@@ -19,7 +19,6 @@ namespace idCardXF
         public static ILectorService LectorService { get; set; } = new LectorService(new LectorRepository());
         public static IPEDateService PEDateService { get; set; } = new PEDateService(new PEDateRepository());
         public static IStudentPEService StudentPEService { get; set; } = new StudentPEService(new StudentPERepository());
-        public static IQrScanningService QrScanningService { get; } = new QrScanningService();
         public App()
         {
             InitializeComponent();

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace idCardApi.Models
@@ -16,7 +17,9 @@ namespace idCardApi.Models
 
         public string StudentEmail { get => _studentEmail; set => _studentEmail = value; }
         public int PeId { get => _peId; set => _peId = value; }
+        [JsonIgnore]
         public Student Student { get => _student; set => _student = value; }
+        [JsonIgnore]
         public PEDate PeDate { get => _peDate; set => _peDate = value; }
         public bool Attented { get => _attented; set => _attented = value; }
     }

@@ -15,14 +15,20 @@ namespace idCardXF.Services
         {
             _studentPERepository = studentPERepository;
         }
+
+        public async Task<StudentPE> GetStudentByIdAndEmail(int id, string email)
+        {
+            return await _studentPERepository.GetStudentByIdAndEmail(id, email);
+        }
+
         public async Task<IEnumerable<StudentPE>> GetStudents(int peId)
         {
             return await _studentPERepository.GetAllStudents(peId);
         }
 
-        public async Task ScanStudent(StudentPE studentPE, string email)
+        public async Task ScanStudent(int id, string email, StudentPE studentPE)
         {
-            await _studentPERepository.ScanStudent(studentPE, email);
+            await _studentPERepository.ScanStudent(id, email, studentPE);
         }
     }
 }

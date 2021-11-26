@@ -15,16 +15,24 @@ namespace idCardApi.Repositories
 
         }
 
+        public StudentPE GetStudentPEByIdAndEmail(int id, string email)
+        {
+            return _context.StudentPEs.Where(s => s.PeId == id).FirstOrDefault(s => String.Equals(s.StudentEmail, email));
+        }
+
         public async Task<IEnumerable<StudentPE>> GetStudents(int id)
         {
             return await _context.StudentPEs.Include(s => s.Student).Where(p => p.PeId == id).ToListAsync();
         }
 
-        public void UpdateStudentStatus(int id, string email)
+        public void UpdateStudentStatus(int id, string email, StudentPE studentPE)
         {
-            StudentPE foundStudent = _context.StudentPEs.Where(s => s.PeId == id).FirstOrDefault(s => String.Equals(s.StudentEmail, email));
-            foundStudent.Attented = true;
-            _context.SaveChanges();
+            StudentPE foundStudentPE = _context.StudentPEs.Where(s => s.PeId == id).FirstOrDefault(s => String.Equals(s.StudentEmail, email));
+            if(foundStudentPE != null)
+            {
+                foundStudentPE.Attented = studentPE.Attented;
+                _context.SaveChanges();
+            }
         }
     }
 }

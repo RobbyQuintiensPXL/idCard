@@ -7,8 +7,7 @@
              BackgroundColor="LightBlue">
     <StackLayout Padding="0">
         <Grid>
-            <zxing:ZXingScannerView IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult"/>
-            <StackLayout Padding="0" Margin="0">
+            <StackLayout Padding="0" Margin="0,-50,0,0">
                 <Frame BackgroundColor="White" HeightRequest="330" HorizontalOptions="FillAndExpand">
                     <ListView ItemsSource="{Binding StudentsPE}" Margin="0,20,0,0" x:Name="PEDatesListView" RowHeight="100" CachingStrategy="RecycleElement">
                         <ListView.ItemTemplate>
@@ -20,13 +19,20 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </Frame>
-                <!--<StackLayout Margin="55,20,55,0">
-                    <Button Command="{Binding ScanClicked}" Text="Scan" BackgroundColor="White" HeightRequest="75" FontSize="25" CornerRadius="20"></Button>
-                   
-                </StackLayout>-->
-                <StackLayout Margin="55,20,55,0" HeightRequest="200">
-                    <Label x:Name="scanResultText"></Label>
-                  
+                
+                <StackLayout Margin="90,-50,90,0" BackgroundColor="Transparent">
+                    <Frame HeightRequest="150" CornerRadius="20">
+                    <zxing:ZXingScannerView IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult"/>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="90,0,90,0" BackgroundColor="Transparent" HeightRequest="35">
+                    <StackLayout>
+                        <Label Margin="10" x:Name="scanResultText" Text="{Binding ScannedEmail, Mode=TwoWay}"></Label>
+                    </StackLayout>
+                    
+                </StackLayout>
+                <StackLayout Margin="90,0,90,0">
+                    <Button Text="Send" Command="{Binding SendButton}" BackgroundColor="White" CornerRadius="20"></Button>
                 </StackLayout>
             </StackLayout>
         </Grid>
