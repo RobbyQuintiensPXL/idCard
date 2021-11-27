@@ -16,9 +16,9 @@ namespace idCardApi.Services
             _studentPERepository = studentPERepository;
         }
 
-        public StudentPE GetStudentPEByIdAndEmail(int id, string email)
+        public async Task<StudentPE> GetStudentPEByIdAndEmail(int id, string email)
         {
-            return _studentPERepository.GetStudentPEByIdAndEmail(id, email);
+            return await _studentPERepository.GetStudentPEByIdAndEmail(id, email);
         }
 
         public async Task<IEnumerable<StudentPE>> GetStudents(int id)

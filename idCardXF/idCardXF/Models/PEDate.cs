@@ -23,5 +23,10 @@ namespace idCardXF.Models
 
         [JsonProperty("courseId")]
         public int CourseId { get => _courseId; set => _courseId = value; }
+
+        public static implicit operator PEDate(StudentPE v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

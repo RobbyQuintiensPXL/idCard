@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
              x:Class="idCardXF.Views.StudentPEView"
              Title="PE Students"
              BackgroundColor="LightBlue">
     <StackLayout Padding="0">
         <Grid>
+            
             <StackLayout Padding="0" Margin="0,-50,0,0">
                 <Frame BackgroundColor="White" HeightRequest="330" HorizontalOptions="FillAndExpand">
-                    <ListView ItemsSource="{Binding StudentsPE}" Margin="0,20,0,0" x:Name="PEDatesListView" RowHeight="100" CachingStrategy="RecycleElement">
+                    <ListView ItemsSource="{Binding StudentsPE}" Margin="0,20,0,0" RowHeight="100" CachingStrategy="RecycleElement">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell Text="{Binding StudentEmail}"

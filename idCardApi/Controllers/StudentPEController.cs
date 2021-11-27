@@ -34,9 +34,9 @@ namespace idCardApi.Controllers
         }
 
         [HttpGet("{id}/{email}")]
-        public StudentPE GetStudentByIdAndEmail(int id, string email)
+        public async Task<StudentPE> GetStudentByIdAndEmail(int id, string email)
         {
-            var studentPE = _studentPEService.GetStudentPEByIdAndEmail(id, email);
+            var studentPE = await _studentPEService.GetStudentPEByIdAndEmail(id, email);
             return studentPE;
         }
     }

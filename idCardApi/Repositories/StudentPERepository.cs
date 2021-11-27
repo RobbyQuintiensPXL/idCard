@@ -15,7 +15,7 @@ namespace idCardApi.Repositories
 
         }
 
-        public StudentPE GetStudentPEByIdAndEmail(int id, string email)
+        public async Task<StudentPE> GetStudentPEByIdAndEmail(int id, string email)
         {
             return _context.StudentPEs.Where(s => s.PeId == id).FirstOrDefault(s => String.Equals(s.StudentEmail, email));
         }

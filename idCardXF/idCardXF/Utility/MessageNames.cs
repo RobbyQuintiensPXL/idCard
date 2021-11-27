@@ -2,7 +2,6 @@
 {
     public class MessageNames
     {
-        public const string PieChangedMessage = "PieChanged";
-        public const string PieSelectedMessage = "PieSelected";
+        public const string ListViewUpdateMessage = "ListViewUpdate";
     }
 }

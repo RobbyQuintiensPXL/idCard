@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopStockApp.Services;
+using BethanysPieShopStockApp.Utility;
 using idCardXF.Models;
 using idCardXF.Services;
 using System;
@@ -13,8 +14,8 @@ namespace idCardXF.ViewModels
 {
     public class StudentPEViewViewModel : BaseViewModel
     {
-        private ObservableCollection<StudentPE> _studentsPE;
         private PEDate _pEDate;
+        private ObservableCollection<StudentPE> _studentsPE;
         public string _studentEmail;
 
         private readonly IStudentPEService _studentPEService;
@@ -27,10 +28,11 @@ namespace idCardXF.ViewModels
 
             SelectedPE = new PEDate();
             SendButton = new Command(OnSendButtonClicked);
+
         }
 
-        //public bool EmailScanned(object obj) => 
-        //    !String.IsNullOrEmpty(_studentEmail);
+        public bool EmailScanned(object obj) =>
+            !String.IsNullOrEmpty(_studentEmail);
 
 
         public ICommand SendButton { get; }
@@ -61,11 +63,9 @@ namespace idCardXF.ViewModels
             set
             {
                 _studentsPE = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(StudentsPE));
             }
         }
-
-
 
         public async void OnSendButtonClicked()
         {
@@ -75,6 +75,8 @@ namespace idCardXF.ViewModels
                 studentPE.Attented = true;
                 await _studentPEService.ScanStudent(SelectedPE.Id, _studentEmail, studentPE);
                 ScannedEmail = null;
+                OnPropertyChanged(nameof(StudentsPE));
+                MessagingCenter.Send(this, MessageNames.ListViewUpdateMessage, StudentsPE);
             }
         }
 

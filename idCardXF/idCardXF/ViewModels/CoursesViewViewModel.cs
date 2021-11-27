@@ -61,9 +61,5 @@ namespace idCardXF.ViewModels
             SelectedStudent = parameter as Student;
             Courses = new ObservableCollection<StudentCourse>(await _courseService.GetCourses(_student.Email));
         }
-
-
-
-
     }
 }

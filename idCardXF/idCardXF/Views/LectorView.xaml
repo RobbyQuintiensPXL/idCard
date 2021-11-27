@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behaviors="clr-namespace:idCardXF.Behaviors"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:behaviors="clr-namespace:idCardXF.Behaviors;assembly=idCardXF"
              x:Class="idCardXF.Views.LectorView"
              BackgroundColor="LightBlue"
              Title="PE Dates Lector">
@@ -8,7 +9,7 @@
         <Grid>
             <StackLayout Padding="0" Margin="0">
                 <Frame HeightRequest="330" HorizontalOptions="FillAndExpand">
-                    <ListView ItemsSource="{Binding PEDates}" Margin="0,20,0,0" x:Name="PEDatesListView" RowHeight="100" CachingStrategy="RecycleElement">
+                    <ListView ItemsSource="{Binding PEDates}" Margin="0,20,0,0" RowHeight="100" x:Name="PEDatesListView" CachingStrategy="RecycleElement">
                         <ListView.Behaviors>
                             <behaviors:EventToCommandBehavior 
                     EventName="ItemTapped" 
